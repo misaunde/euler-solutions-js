@@ -1,15 +1,13 @@
 const { performance } = require('perf_hooks');
 var _ = require('lodash');
 
-function sumNum(start = 0, end = Infinity, step = 1) {
+function sumNum(start=0, end=1000, step=1) {
     let n = 0;
     for (let i=start; i<end; i += step) {
         n += i;
     }
     return n;
 }
-
-
 
 let t0 = performance.now();
 console.log("sum: ", sumNum(0, 1000, 3) + sumNum(0, 1000, 5));
