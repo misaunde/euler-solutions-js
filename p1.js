@@ -1,37 +1,16 @@
 const { performance } = require('perf_hooks');
 var _ = require('lodash');
 
-function sumNum(start=0, end=1000, step=1) {
-    let n = 0;
-    for (let i=start; i<end; i += step) {
-        n += i;
-    }
-    return n;
-}
-
-let t0 = performance.now();
-console.log("sum: ", sumNum(0, 1000, 3) + sumNum(0, 1000, 5));
-let t1 = performance.now();
-console.log("time: ", (t1 - t0) / 1000);
-
-//=============================
-// sum?:  266333
-// time:  0.0019370291233062743
-//=============================
-
-
-
-
-function lodash() {
-    return _.sum(_.range(0, 1000, 3)) + _.sum(_.range(0, 1000, 5));
+function multiples() {
+    const multiples = _.range(0,1000).filter(n => n%3==0 || n%5==0)
+    return _.sum(multiples);
 }
 
 t0 = performance.now();
-console.log("sum: ", lodash());
-t1 = performance.now();
-console.log("time: ", (t1 - t0) / 1000);
+console.log("sum: ", multiples());
+console.log("time: ", (performance.now() - t0) + " ms");
 
-//=============================
+//==============================
 // sum:  266333
-// time:  0.0004896161556243897
-//=============================
+// time:  0.24497300386428833 ms
+//==============================
