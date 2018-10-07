@@ -6,7 +6,7 @@ function isPalindrome(num) {
 
 function maxPalindrome(high, low) {
     let valid = [];
-    for (var i=high; i>low; i--) {
+    for (var i=high; i>=low; i--) {
         for (var j=high; j>low; j--) {
             if (isPalindrome(i*j))
                 valid.push([i*j])
@@ -16,7 +16,7 @@ function maxPalindrome(high, low) {
 }
 
 t0 = performance.now();
-console.log(maxPalindrome(1000,100));
+console.log(maxPalindrome(999,100));
 console.log("time: ", (performance.now() - t0) + " ms");
 
 //==============================
