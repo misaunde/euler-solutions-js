@@ -26,7 +26,7 @@ function largestPrimeFactor(primes, val, origval) {
     }
 }
 
-t0 = performance.now();
+let t0 = performance.now();
 console.log("factor: ", largestPrimeFactor(getPrimes(10000), 600851475143, 600851475143));
 console.log("time: ", (performance.now() - t0) + " ms");
 

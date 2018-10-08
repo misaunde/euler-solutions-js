@@ -15,7 +15,7 @@ function maxPalindrome(high, low) {
     return Math.max(...valid);
 }
 
-t0 = performance.now();
+let t0 = performance.now();
 console.log(maxPalindrome(999,100));
 console.log("time: ", (performance.now() - t0) + " ms");
 

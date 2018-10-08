@@ -6,7 +6,7 @@ function multiples() {
     return _.sum(multiples);
 }
 
-t0 = performance.now();
+let t0 = performance.now();
 console.log("sum: ", multiples());
 console.log("time: ", (performance.now() - t0) + " ms");
 

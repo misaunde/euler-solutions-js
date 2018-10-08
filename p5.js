@@ -10,7 +10,7 @@ function smallestMultiple(size) {
     return _.range(size, 1000000000, size).find(n => isValid(divisors, n))
 }
 
-t0 = performance.now();
+let t0 = performance.now();
 console.log("min: ", smallestMultiple(20))
 console.log("time: ", (performance.now() - t0) + " ms");
 

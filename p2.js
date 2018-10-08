@@ -12,7 +12,7 @@ function evenfib(maxVal) {
     return even;
 }
 
-t0 = performance.now();
+let t0 = performance.now();
 console.log("sum: ", evenfib(4000000))
 console.log("time: ", (performance.now() - t0) + " ms");
 
