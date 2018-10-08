@@ -2,11 +2,9 @@ const { performance } = require('perf_hooks');
 var _ = require('lodash');
 
 function isPrime(num) {
-    for ( var i = 2; i < num; i++ ) {
-        if ( num % i === 0 ) {
+    for (var i = 2; i <= Math.sqrt(num); i++) 
+        if (num % i == 0) 
             return false;
-        }
-    }
     return true;
 }
 
@@ -33,7 +31,7 @@ console.log("time: ", (performance.now() - t0) + " ms");
 
 //==============================
 // factor:  6857
-// time:  23.73895698785782 ms
+// time:  6.908864974975586 ms
 //==============================
 
 

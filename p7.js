@@ -2,7 +2,7 @@ const { performance } = require('perf_hooks');
 var _ = require('lodash');
 
 function isPrime(num) {
-    for (var i = 2; i < num; i++) 
+    for (var i = 2; i <= Math.sqrt(num); i++) 
         if (num % i == 0) 
             return false;
     return true;
@@ -27,5 +27,5 @@ console.log("time: ", (performance.now() - t0) + " ms");
 
 //==============================
 // prime:  104743
-// time:  1783.8539319634438 ms
+// time:  19.025837004184723 ms
 //==============================
