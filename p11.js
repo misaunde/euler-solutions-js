@@ -43,5 +43,11 @@ function getProduct(grid, i, j, width) {
 
 
 let t0 = performance.now();
-console.log("sum: ", maxProduct(aGrid, 4));
+console.log("max: ", maxProduct(aGrid, 4));
 console.log("time: ", (performance.now() - t0) + " ms");
+
+
+//==============================
+// max:  70600674
+// time:  4.195847988128662 ms
+//==============================
