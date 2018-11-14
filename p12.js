@@ -59,7 +59,7 @@ console.log("time: ", (performance.now() - t0) + " ms");
 
 
 //takes about 5 times as long using this:
-function findDivisorsLengthSlow(num) {
+function divisors_SLOW(num) {
     let divisors = 1;
     let sqrt = Math.ceil(Math.sqrt(num));
     let range = _.range(sqrt, 0, sqrt? -1 : -2);
