@@ -71,7 +71,6 @@ function numberLetterCounts(n) {
     for (var i=1; i<=n; i++) {
         let word = convertNumberToWord(i, '');
         len += word.length;
-        // console.log(word);
     }
     return len;
 }
