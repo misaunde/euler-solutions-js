@@ -3,7 +3,7 @@ const { performance } = require('perf_hooks');
 var _ = require('lodash');
 
 
-function* triangleNumbers() {
+const triangleNumbers = function* () {
     let prev = [];
     let sum = 0;
     while (true) {
@@ -26,13 +26,12 @@ function divisors(num) {
       let compliment = num / curFactor;
       if (compliment !== curFactor) factors.push(compliment);
     }
-  
     return factors;
 }
 
 function divisibleTriangleNumbers(size) {
-    let len = 0;
     const nums = triangleNumbers();
+    let len = 0;
     let num;
     while (len < size) {
         num = nums.next().value;
@@ -50,3 +49,23 @@ console.log("time: ", (performance.now() - t0) + " ms");
 // result:  76576500
 // time:  235.71578001976013 ms
 //==============================
+
+
+
+
+
+
+
+
+
+//takes about 5 times as long using this:
+function findDivisorsLengthSlow(num) {
+    let divisors = 1;
+    let sqrt = Math.ceil(Math.sqrt(num));
+    let range = _.range(sqrt, 0, sqrt? -1 : -2);
+    range.forEach(n => {
+        if (num%n == 0)
+            divisors++;
+    });
+    return divisors*2;
+}
